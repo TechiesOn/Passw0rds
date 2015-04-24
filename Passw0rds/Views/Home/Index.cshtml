@@ -1,0 +1,88 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passw0rds</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link href="//fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet" type="text/css">
+    <style>
+ 
+        html {
+            font-size: 62.5%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 15px;
+            font-family: 'Share Tech Mono';
+            font-size: 2rem;
+        }
+
+        @@media (max-width: 768px) {
+            
+            body {
+                margin: 0;
+                font-size: 1.2rem;
+            }
+
+            table {
+                width: 100%;
+            }
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+            font-weight: normal;
+        }
+
+        th {
+            border-color: #228b22;
+            background-color: #228b22;
+            color: white;
+        }
+    
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Alpha Numeric</th>
+                <th>Special Chars</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (var i = 8; i <= 20; i = i + 2)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@PasswordGenerator.GetAlphaNumeric(i)</td>
+                    <td>@PasswordGenerator.GetSpecialChars(i)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
