@@ -1,21 +1,19 @@
-﻿@{
-    Layout = null;
-}
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The greatest password generator invented, behold its glory. By Andy Mehalick and Orange Jetpack Studios.">
     <title>Passw0rds</title>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
     <link href="//fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet" type="text/css">
     <style>
  
@@ -28,25 +26,18 @@
         body {
             margin: 15px;
             font-family: 'Share Tech Mono';
-            font-size: 2rem;
+            text-align: center;
         }
 
-        @@media (max-width: 768px) {
-            
-            body {
-                margin: 0;
-                font-size: 1.2rem;
-            }
-
-            table {
-                width: 100%;
-            }
+        body > section {
+            display: inline-block;
+            margin: 0 auto;
+            font-size: 2rem;
         }
 
         table {
             border-spacing: 0;
             border-collapse: collapse;
-            margin: 0 auto;
         }
 
         th, td {
@@ -61,20 +52,68 @@
             background-color: #228b22;
             color: white;
         }
+
+        ul {
+            float: right;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            display: block;
+            float: left;
+            position: relative;
+            padding: 2px;
+            font-size: 1.2rem;  
+        }
+
+        li + li:before {
+            padding: 0 4px 0 0;
+            color: #ddd;
+            content: "|";
+        }
+
+        a {
+            color: #228b22;
+            text-decoration: none;
+            
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @@media (max-width: 768px) {
+            
+            body {
+                margin: 0;      
+            }
+
+            body > section {
+                display: block;
+                font-size: 1.2rem;
+            }
+
+            table {
+                width: 100%;
+            }
+        }
     
     </style>
 </head>
 <body>
-    <table>
-        <thead>
+    <section>
+        <table>
+            <thead>
             <tr>
-                <th></th>
+                <th>#</th>
                 <th>Alpha Numeric</th>
                 <th>Special Chars</th>
             </tr>
-        </thead>
-        <tbody>
-            @for (var i = 8; i <= 20; i = i + 2)
+            </thead>
+            <tbody>
+            @for (var i = 6; i <= 20; i = i + 2)
             {
                 <tr>
                     <td>@i</td>
@@ -82,7 +121,15 @@
                     <td>@PasswordGenerator.GetSpecialChars(i)</td>
                 </tr>
             }
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+        <nav>
+            <ul>
+                <li><a href="/">Refresh</a></li>
+                <li><a href="https://andy.mehalick.com/" title="Andy Mehalick">ADM</a></li>
+                <li><a href="https://www.orangejetpack.com/" title="Orange Jetpack Studios">OJS</a></li>
+            </ul>
+        </nav>
+    </section>
 </body>
 </html>

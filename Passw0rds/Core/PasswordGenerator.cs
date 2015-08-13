@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Passw0rds
+namespace Passw0rds.Core
 {
     public class PasswordGenerator
     {
